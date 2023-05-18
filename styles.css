@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(156, 129, 93);
+}
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#football svg,
+#baskteball svg,
+#volleyball svg,
+#tennis svg,
+#rugby svg {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50px;
+  left: 30%;
+}
+/* #baskteball svg,
+        #volleyball svg,
+        #tennis svg,
+        #rugby svg {
+    display: none;
+} */
+.spinner-container {
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loaderItem:not(:first-child) {
+  display: none;
+}
+.loaderItem {
+  animation: showSvg 1s ease-in-out;
+}
+
+@keyframes showSvg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
